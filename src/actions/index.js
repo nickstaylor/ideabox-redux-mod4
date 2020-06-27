@@ -10,15 +10,12 @@ export const deleteToDo = id => ({
   type: 'DELETE_TODO',
   id
 })
-export const showActive = todos => ({
+export const showActive = () => ({
   type: 'ACTIVE_TODOS',
-  todos
 })
-export const showCompleted = todos => ({
+export const showCompleted = () => ({
   type: 'COMPLETED_TODOS',
-  todos
 })
-export const showAll = todos => ({
+export const showAll = () => ({
   type: 'SHOW_ALL',
-  todos
 })
