@@ -37,7 +37,8 @@ button {
     border: none;
     padding: 0;
     margin: 0;
-    width: 80px;
+    margin-top: 5px;
+    width: 95px;
     border-radius: 10px;
     /* display: block; */
     background-color: #3f3f55;

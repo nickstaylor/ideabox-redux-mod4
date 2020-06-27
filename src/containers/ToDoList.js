@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import ToDo from '../components/ToDo'
+import ToDo from './ToDo'
 import { showCompleted, showActive, showAll } from '../actions'
 
 
@@ -29,9 +29,9 @@ const ToDoList = ({todos, filteredTodos, filtered, showActive, showAll, showComp
     {
       todos.length ?
       <div>
-      <button className="task-button" onClick={() => showCompleted()}>Show Completed</button>
-      <button className="task-button" onClick={() => showActive()}>Show Active</button>
-      <button className="task-button" onClick={() => showAll()}>Show All</button>
+      <button className="task-button" onClick={() => showCompleted()}>Completed Todos</button>
+      <button className="task-button" onClick={() => showActive()}>Active Todos</button>
+      <button className="task-button" onClick={() => showAll()}>All Your Todos</button>
     </div> : ''
     }
     </div>

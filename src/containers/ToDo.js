@@ -6,7 +6,7 @@ import { completeToDo, deleteToDo } from '../actions'
 const ToDo = ({ id, todo, completed, completeToDo, deleteToDo }) => {
   return (
     <li className={completed ? "completed-task" : null}>{todo}
-    <button className="task-button" onClick={() => completeToDo(id)}>Completed</button>
+    <button className="task-button" onClick={() => completeToDo(id)}>Completed ?</button>
     <button className="task-button" onClick={() => deleteToDo(id)}>Delete</button>
     </li>
   )
