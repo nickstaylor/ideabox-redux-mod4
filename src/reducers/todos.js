@@ -1,7 +1,7 @@
 let todoState = {
   todos: [],
-  filteredTodos: [],
-  filtered: false
+  // filteredTodos: [],
+  filtered: ''
 }
 
 export const todos = (state = todoState, action) => {
@@ -10,15 +10,15 @@ export const todos = (state = todoState, action) => {
     case 'ADD_TODO':
     let newTodos = [...state.todos, {id: Date.now(), todo: action.todo, completed: false}]
     return {todos: newTodos,
-            filteredTodos: [],
-            filtered: false
+            // filteredTodos: [],
+            filtered: ''
           }
 
     case 'SHOW_ALL':
     console.log('show all');
     return {todos: state.todos,
-            filteredTodos: [],
-            filtered: false
+            // filteredTodos: [],
+            filtered: ''
           }
 
     case 'COMPLETE_TODO':
@@ -27,30 +27,30 @@ export const todos = (state = todoState, action) => {
       return item
     })
     return {todos: newtodos1,
-            filteredTodos: state.filtered,
-            filtered: false
+            // filteredTodos: state.filteredTodos,
+            filtered: state.filtered
           }
 
     case 'DELETE_TODO':
     let newTodos2 =  state.todos.filter(item => action.id !== item.id);
     return {todos: newTodos2,
-            filteredTodos: state.filtered,
-            filtered: false
+            // filteredTodos: state.filteredTodos,
+            filtered: state.filtered
           }
 
     case 'ACTIVE_TODOS':
-    let filteredActive =  state.todos.filter(item => !item.completed);
+    // let filteredActive =  state.todos.filter(item => !item.completed);
     return {todos: state.todos,
-            filteredTodos: filteredActive,
-            filtered: true
+            // filteredTodos: filteredActive,
+            filtered: 'active'
           }
 
     case 'COMPLETED_TODOS':
 
-    let filteredComplete = state.todos.filter(item => item.completed);
+    // let filteredComplete = state.todos.filter(item => item.completed);
     return {todos: state.todos,
-            filteredTodos: filteredComplete,
-            filtered: true
+            // filteredTodos: filteredComplete,
+            filtered: 'completed'
           }
 
     default:

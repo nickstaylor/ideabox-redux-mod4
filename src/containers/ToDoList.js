@@ -4,12 +4,18 @@ import ToDo from './ToDo'
 import { showCompleted, showActive, showAll } from '../actions'
 
 
-const ToDoList = ({todos, filteredTodos, filtered, showActive, showAll, showCompleted}) => {
+const ToDoList = ({todos, filtered, showActive, showAll, showCompleted}) => {
   let mapTodos;
-  if(!filtered){
+  if(!filtered.length){
     mapTodos = todos
   } else {
-    mapTodos = filteredTodos
+    if (filtered === 'active'){
+    // mapTodos = filteredTodos
+    mapTodos = todos.filter(item => !item.completed);
+    }
+    if (filtered === 'completed'){
+    mapTodos = todos.filter(item => item.completed);
+    }
   }
   const displayToDos = mapTodos.map(todo=>{
     return (
@@ -40,7 +46,7 @@ const ToDoList = ({todos, filteredTodos, filtered, showActive, showAll, showComp
 
 const mapStateToProps = state => ({
   todos: state.todos.todos,
-  filteredTodos: state.todos.filteredTodos,
+  // filteredTodos: state.todos.filteredTodos,  
   filtered: state.todos.filtered
 })
 
